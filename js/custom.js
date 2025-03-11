@@ -314,7 +314,11 @@
       if (yidx >= 0)
         $("#pub_year").attr("href", "year.html#c:" + yidx);
 
-      $("#epub_link").attr('href', "https://biblioteca.hogar.dnset.com/biblioteca/" + binfo[bn][3] + ".epub");
+      //    Ruta a la base de datos que me encontré subida por otra persona
+      //    $("#epub_link").attr('href', "https://biblioteca.hogar.dnset.com/biblioteca/" + binfo[bn][3] + ".epub");
+
+      //    Ruta a la base de datos en ASUS SSD
+            $("#epub_link").attr(href="https://casa-pineda.asuscomm.com/AICLOUD625530465/biblioteca" + binfo[bn][3] + ".epub" download);
 
       $("#div_subjects").empty();
       for (var i = 0; i < 32*3; i++) {
