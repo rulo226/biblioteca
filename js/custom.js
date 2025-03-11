@@ -318,7 +318,7 @@
       //    $("#epub_link").attr('href', "https://biblioteca.hogar.dnset.com/biblioteca/" + binfo[bn][3] + ".epub");
 
       //    Ruta a la base de datos en ASUS SSD
-            $("#epub_link").attr(href="https://casa-pineda.asuscomm.com/AICLOUD625530465/biblioteca" + binfo[bn][3] + ".epub" download);
+            $("#epub_link").attr('href', "https://casa-pineda.asuscomm.com/AICLOUD625530465/biblioteca/" + binfo[bn][3] + ".epub");
 
       $("#div_subjects").empty();
       for (var i = 0; i < 32*3; i++) {
