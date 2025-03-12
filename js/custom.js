@@ -74,7 +74,7 @@
 
   function loadImageDefer(image, url) {
     var $downloadingImage = $("<img>");
-    $downloadingImage.bind('load', {im: image}, function(e) {
+    $downloadingImage.on('load', {im: image}, function(e) {
       $(e.data.im).attr("src", $(this).attr("src"));
       $(e.data.im).removeAttr('width');
       $(e.data.im).removeAttr('height');
@@ -90,7 +90,7 @@
     var imgy = (bid / spritew | 0) % spriteh;
     var filename = "./img/" + imgn + ".webp";
     var im = document.createElement('div');
-    $(obj).css('background', 'url(' + filename + ')');
+    $(obj).css('background-image', 'url("' + filename + '")');
     $(obj).css('background-size', (spritew * 100) + '% ' + (spriteh*100) + '%');
     $(obj).css('background-position', '-' + imgx*100 + '% -' + imgy*100 + '%');
   }
