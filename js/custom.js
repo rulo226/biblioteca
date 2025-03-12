@@ -74,7 +74,7 @@
 
   function loadImageDefer(image, url) {
     var $downloadingImage = $("<img>");
-    $downloadingImage.bind('load', {im: image}, function(e) {
+    $downloadingImage.onload('load', {im: image}, function(e) {
       $(e.data.im).attr("src", $(this).attr("src"));
       $(e.data.im).removeAttr('width');
       $(e.data.im).removeAttr('height');
