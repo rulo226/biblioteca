@@ -88,7 +88,7 @@
     var imgn = bid / (spritew*spriteh) | 0;
     var imgx = bid % spritew;
     var imgy = (bid / spritew | 0) % spriteh;
-    var filename = "./img/" + imgn + ".webp";
+    var filename = window.location.origin + "/img/" + imgn + ".webp";
     var im = document.createElement('div');
     $(obj).css('background', 'url(' + filename + ')');
     $(obj).css('background-size', (spritew * 100) + '% ' + (spriteh*100) + '%');
