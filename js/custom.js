@@ -84,15 +84,18 @@
   }
   
   function setcover(obj, bid) {
-    // Loading image trick
-    var imgn = bid / (spritew*spriteh) | 0;
+    // Calcula el sprite a usar
+    var imgn = Math.floor(bid / (spritew * spriteh));
     var imgx = bid % spritew;
-    var imgy = (bid / spritew | 0) % spriteh;
-    var filename = "./img/" + imgn + ".webp";
-    var im = document.createElement('div');
-    $(obj).css('background-image', 'url("' + filename + '")');
-    $(obj).css('background-size', (spritew * 100) + '% ' + (spriteh*100) + '%');
-    $(obj).css('background-position', '-' + imgx*100 + '% -' + imgy*100 + '%');
+    var imgy = Math.floor(bid / spritew) % spriteh;
+    // Construye una URL absoluta para evitar problemas de rutas en móviles
+    var filename = window.location.origin + "/img/" + imgn + ".webp";
+    // Asigna la imagen de fondo usando propiedades CSS de forma agrupada
+    $(obj).css({
+      "background-image": 'url("' + filename + '")',
+      "background-size": (spritew * 100) + '% ' + (spriteh * 100) + '%',
+      "background-position": '-' + (imgx * 100) + '% -' + (imgy * 100) + '%'
+    });
   }
 
   // booklist: List of book ids to render
